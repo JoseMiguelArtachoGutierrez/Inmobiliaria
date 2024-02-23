@@ -1,0 +1,92 @@
+.container__detalles{
+    width: 95%;
+    background-color: $Blanco;
+    padding: 2rem;
+    @include flex-posicion(center,center,column,1rem,wrap);
+    &>.contenedor__detalles__carrusel{
+        width: 100%
+    }
+    &>.contenedor__detalles__texto{
+        @include flex-posicion(space-between,flex-start,row,0.5rem,wrap);
+        &>div:first-child{
+            width: 65%;
+            padding: 1rem;
+            border: 2px solid $color-pricipal;
+            @include flex-posicion(center,center,column,1rem,wrap);
+            &>.contenedor__arriba{
+                width: 100%;
+                @include flex-posicion(space-between,center,row,1rem,wrap);
+                &>.contenedor__izquierda{
+                    @include flex-posicion(center,flex-start,column,1rem,wrap);
+                    &>h1{
+                        font-family: $fuente-titulo;
+                        color: $color-terciario;
+                    }
+                    &>.contenedor__personasYcamas{
+                        @include flex-posicion(center,center,row,2rem,wrap);
+                        &>div{
+                            @include flex-posicion(center,center,row,1rem,wrap);
+                            &>p{
+                                font-weight: bold;
+                                color: $color-terciario;
+                                font-size: 1.5rem;
+                            }
+                        }
+                    }
+                }
+            }
+            &>.contenedor__abajo{
+                &>article{
+                    &>h3{
+                        font-family: $fuente-titulo;
+                        color: $color-terciario;
+                    }
+                    &>p{
+                        color: $color-terciario-claro;
+                    }
+                }
+            }
+        }
+        &>div:last-child{
+            color: $Blanco;
+            width: 33%;
+            padding: 1rem;
+            background-color: $color-terciario;
+            @include flex-posicion(center,center,column,1rem,wrap);
+            &>h2{
+                font-family: $fuente-titulo;
+                font-size: 3rem;
+                font-weight: bold;
+            }
+            &>p>span{
+                color: $color-secundario-oscuro;
+                font-weight: bold;
+                
+            }
+            &>button{
+                padding: 0.5rem;
+                color: $Blanco;
+                background-color: $color-pricipal;
+                border: none;
+                border-radius: 0.5rem;
+                font-weight: bold;
+                &:hover{
+                    transition: 1s ease;
+                    transform: scale(1.1);
+                    background-color: $Blanco;
+                    color: $color-terciario;
+                }
+            }
+            
+        }
+        @include mediaQuery(tablet){
+            flex-direction: column;
+            &>div:first-child{
+                width: 100%;
+            }
+            &>div:last-child{
+                width: 100%;
+            }
+        }
+    }
+}

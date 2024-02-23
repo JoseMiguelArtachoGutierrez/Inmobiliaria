@@ -1,0 +1,67 @@
+
+/// Este mixin sirve para crear los valores por defecto del documento
+@mixin siempre{
+    overflow: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: $fuente-global;
+}
+
+///  Este mixin sirve para darle un display flex personalizado en cualquier momento a un elemento 
+///  si este no es rellenado se le pondran unos valores por defecto
+///  @param {string} horizontal Indica que tipo de justify-content quieres
+///  @param {string} vertical Indica que tipo de align-items quieres
+///  @param {string} direccion Indica el flex-direccion
+///  @param {string} gap Indica la cantidad de gap que quieres
+///  @param {string} wrap Indica si quieres o no wrap
+@mixin flex-posicion($horizontal:center, $vertical:center, $direccion:row, $gap:0, $wrap:nowrap){
+    display: flex !important;
+    justify-content: $horizontal !important;
+    align-items: $vertical !important;
+    flex-direction: $direccion !important;
+    gap: $gap !important;
+    flex-wrap: $wrap !important;
+}
+///  Este mixin sirve para crear un boton segun mis variables globales y con una animacion
+///  @param {string} padding sirve para indicar el padding que tendra el boton
+
+@mixin botonazo($padding:0.5rem){
+    padding: $padding;
+    background-color: $color-terciario;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    color: $Blanco;
+    text-decoration: none;
+    &:hover{
+        transition: 1s ease;
+        transform: scale(1.1);
+        background-color: $Blanco;
+        border: 1px solid $color-terciario;
+        color: $color-terciario;
+        cursor: pointer;
+    }
+}
+
+/// Este mixin sirve para crear una media query en mitad del css del componente
+/// @param {string} tamaño Esta variable indica cual de los tres posibles media Query quieres
+@mixin mediaQuery($tamaño) { // Responsivo
+    @if $tamaño == "tablet" {
+        @media screen and (max-width: 950px) {
+            @content;
+        }
+    }
+    @if $tamaño =="mitad"{
+        @media screen and (max-width: 700px) {
+            @content;
+        }
+    }
+    @if $tamaño == "mobile" {
+        @media screen and (max-width: 550px) {
+            @content;
+        }
+    }
+}

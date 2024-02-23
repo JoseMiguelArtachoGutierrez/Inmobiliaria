@@ -1,0 +1,83 @@
+.hero{
+    width: 100%;
+    background-image: url("../assets/img/living-room-2569325_1280.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+
+}
+.hero__div{
+    @include flex-posicion(space-evenly,center,row,0,wrap);
+    width: 100%;
+    height: 100%;
+    background-color: $color-difuminar;
+    &>.div_Blanco{
+        background-color: $Blanco;
+        padding: 1rem;
+        width: 30%;
+        border-radius: 1rem;
+        height: 20rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        @include flex-posicion(space-evenly,center,column,0,wrap);
+        &>h2{
+            height: 5rem;
+            width: 100%;
+            text-align: center;
+            color: $color-terciario;
+            font-size: 2rem;
+            font-family: $fuente-titulo;
+        }
+        &>p{
+            font-size: 0.8rem;
+        }
+        
+    }
+    &>.div_titulo{
+        width: 50%;
+        height: 20rem;
+        @include flex-posicion(space-between,center,column,0,wrap);
+        &>h1{
+            font-family: $fuente-titulo;
+            font-size: 3rem;
+            color: $color-terciario;
+            text-align: center;
+            padding: 1rem;
+            border-radius: 1rem;
+        }
+        &>.container_texto{
+            width: 60%;
+            height: 10rem;
+            background-color: $color-secundario-medio-oscuro;
+            border-radius: 0.4rem;
+            padding: 1rem;
+            
+            @include flex-posicion(space-between,center,row,0,wrap);
+            &>input{
+                padding: 1rem;
+                border-radius: 0.5rem;
+                border: none;
+                width: 100%;
+                text-align: center;
+            }
+            &>p{
+                color: $Blanco;
+                font-weight:bold;
+                font-size: 1rem; 
+                text-align: center;
+                width: 100%
+            }
+        }
+    }
+    @include mediaQuery(tablet){
+        @include flex-posicion(space-between,center,column-reverse,0,wrap);
+        &>.div_titulo{
+            width: 90%;
+        }
+        &>.div_Blanco{
+            width: 80%;
+            
+        }
+    }
+}

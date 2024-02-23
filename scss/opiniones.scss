@@ -1,0 +1,18 @@
+.carousel-caption{
+    background-color: $Blanco;
+    &>p{
+        font-size: 1rem;
+        color: $color-secundario-medio-oscuro !important;
+    }
+}
+.opiniones{
+    margin-top: 3rem;
+    width: 100%;
+    @include flex-posicion(center,center,column,0,wrap);
+}
+.carousel{
+    width: 100%;
+}
+.carousel-dark{
+    margin-top: 3rem;
+}

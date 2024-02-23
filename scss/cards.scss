@@ -1,0 +1,43 @@
+.titulo__total__cards{
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: $fuente-titulo;
+    color: $color-terciario;
+}
+.contenedor__total__cards{
+    margin-top: 3rem;
+    @include flex-posicion(center,center,column,2rem,wrap);
+
+}
+.container__cards{
+    @include flex-posicion(center,center,row,1rem,wrap);
+}
+.card-body{
+    height: 50%;
+    @include flex-posicion(space-between,center,column,0.5rem,wrap);
+}
+.card-title{
+    height: 10%;
+    color: $color-terciario;
+    font-weight: bold;
+    font-size: large;
+}
+.card-text{
+    height: 60%;
+    text-align: justify;
+}
+.card{
+    height: 32rem
+}
+.boton__personalizado{
+    height: 20%;
+    text-decoration: none;
+    @include flex-posicion();
+    @include botonazo(1rem);
+
+}
+.container__img__cards{
+    width: 100%;
+    height: 45%;
+    @include flex-posicion();
+}

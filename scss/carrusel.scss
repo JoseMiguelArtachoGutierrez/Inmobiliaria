@@ -1,0 +1,22 @@
+.carousel-item{
+    height: 80vh;
+    width: 100%;
+    @include mediaQuery(mobile){
+        height: 40vh;
+    }
+}
+
+.slider{
+    overflow: hidden;
+    border-radius: 1rem !important;
+    margin-top: 5rem;
+    width: 90%;
+    @include mediaQuery(tablet){
+        width: 100%;
+        overflow: visible;
+        border-radius: none;
+    }
+}
+.carousel-control-next-icon{
+    z-index: 1;
+}
